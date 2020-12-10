@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.demon.ehcache.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启在控制台输出日志
+
